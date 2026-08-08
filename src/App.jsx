@@ -7,13 +7,15 @@ import Services from "./pages/Services";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
-import Quote from "./pages/Quote";
+import RequestQuote from "./pages/RequestQuote";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
   return (
     <>
+    <ScrollProgress />
    <Navbar />
 
    <div className="pt-20">
@@ -26,7 +28,7 @@ function App() {
       <Route path="/products" element={<Products />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/quote" element={<Quote />} />
+      <Route path="/quote" element={<RequestQuote />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -7,7 +7,7 @@ import heroImage from "../assets/images/hero-cargo.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#071B45] overflow-hidden">
+     <section className="relative bg-[#071B45] overflow-hidden">
 
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#071B45] via-[#0F2D66]/95 to-[#0F2D66]/70"></div>
@@ -65,18 +65,13 @@ export default function Hero() {
             <div className="mt-14 grid grid-cols-3 gap-6">
 
               <div>
-                <h2 className="text-4xl font-bold text-white">25+</h2>
+                <h2 className="text-4xl font-bold text-white">15+</h2>
                 <p className="text-blue-200 mt-2">Countries</p>
               </div>
 
               <div>
-                <h2 className="text-4xl font-bold text-white">500+</h2>
-                <p className="text-blue-200 mt-2">Clients</p>
-              </div>
-
-              <div>
-                <h2 className="text-4xl font-bold text-white">1500+</h2>
-                <p className="text-blue-200 mt-2">Shipments</p>
+                <h2 className="text-4xl font-bold text-white">2000+</h2>
+                <p className="text-blue-200 mt-2">Factory</p>
               </div>
 
             </div>
