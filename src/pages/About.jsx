@@ -58,9 +58,9 @@ export default function About() {
 
             <p className="mt-8 max-w-3xl mx-auto text-blue-100 text-xl leading-9">
 
-              YIHE International Trade Service helps businesses source
-              high-quality products from trusted manufacturers with
-              transparent pricing, quality assurance and worldwide logistics.
+              Founded in Foshan, Yihe Group was built to solve the primary challenges of international sourcing: 
+              communication breakdowns, unverified quality, and fragmented supply chains. 
+              We operate not just as a trading intermediary, but as a total supply chain partner with skin in the game.
 
             </p>
 
@@ -94,7 +94,7 @@ export default function About() {
 
               <h3 className="mt-5 text-2xl font-bold text-white">
 
-                Trusted Suppliers
+                Trusted Factories
 
               </h3>
 
@@ -178,15 +178,14 @@ export default function About() {
 
               <p className="mt-8 text-blue-100 text-lg leading-9">
 
-                YIHE International Trade Service is committed to helping
-                businesses source high-quality products from verified
-                manufacturers across China and other global markets.
+                Headquartered in Foshan, China-the manufacturing heart of Guangdong-Yihe Group is a modern global trading entity. We bridge the gap between high-capacity Chinese manufacturing and international buyers. By integrating our own in-house production facilities, trusted factory networks, local quality assurance, and direct overseas branches, we eliminate trade friction, quality risks, and supply chain delays.
+
 
               </p>
 
               <p className="mt-6 text-blue-100 text-lg leading-9">
 
-                From supplier identification and factory verification to
+                From factory verification to
                 quality inspection, logistics, customs support and
                 international shipping, we provide complete end-to-end
                 import & export solutions.
@@ -199,13 +198,13 @@ export default function About() {
 
                   <h3 className="text-4xl font-bold text-cyan-300">
 
-                    500+
+                    2000+
 
                   </h3>
 
                   <p className="mt-2 text-blue-100">
 
-                    Verified Suppliers
+                    Verified Factories
 
                   </p>
 
@@ -231,7 +230,7 @@ export default function About() {
 
                   <h3 className="text-4xl font-bold text-cyan-300">
 
-                    20+
+                    15+
 
                   </h3>
 
@@ -291,16 +290,17 @@ export default function About() {
 
             <h2 className="mt-8 text-5xl font-bold text-white">
 
-              Building Strong Global
-              Business Connections
+              
+              Our Dual-Presence Operational Model
 
             </h2>
 
             <p className="mt-8 text-blue-100 text-lg leading-9">
 
-              Our mission is to simplify international trade by connecting
-              businesses with trusted manufacturers, ensuring quality,
-              transparency and cost-effective global sourcing.
+              
+              [ FACTORY FLOOR]
+              Stationed Chinese QA Staff
+              Direct oversight, raw material inspection, production tracking.
 
             </p>
 

@@ -10,18 +10,18 @@ import {
 const data = [
   {
     icon: ShieldCheck,
-    title: "Trusted Trading Partner",
-    desc: "Reliable import and export solutions with complete transparency.",
+    title: "In-House & Partnered Factories",
+    desc: "In-House & Partnered Factories: Flexible capacity across diverse product categories with strict standards. ",
   },
   {
     icon: Globe2,
-    title: "Global Network",
-    desc: "Strong sourcing and logistics network across multiple countries.",
+    title: "On-Site Stationed Teams ",
+    desc: "Native Chinese Quality Assurance (QA) and management staff stationed directly inside partner factories. ",
   },
   {
     icon: Truck,
-    title: "Fast Logistics",
-    desc: "Sea, Air and Land freight with timely delivery.",
+    title: "Logistics & Regional Branch Support",
+    desc: "Direct container consolidation and local clearance for multi-category mixed shipments.",
   },
   {
     icon: FileCheck,
@@ -30,13 +30,13 @@ const data = [
   },
   {
     icon: Handshake,
-    title: "Verified Suppliers",
-    desc: "Only trusted manufacturers and verified suppliers.",
+    title: "Verified Manufacturers",
+    desc: "Connects you with trusted, fully verified factories meeting strict quality standards..",
   },
   {
     icon: Clock3,
-    title: "24/7 Support",
-    desc: "Professional assistance whenever your business needs us.",
+    title: "End-to-End Logistics ",
+    desc: "Integrated logistics division handling customs, warehousing, and freight forwarding directly to your door.",
   },
 ];
 

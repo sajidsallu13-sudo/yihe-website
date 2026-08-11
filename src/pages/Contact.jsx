@@ -85,7 +85,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/917004722363"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-8 py-4 text-white hover:bg-white/20 transition"
@@ -141,7 +141,7 @@ export default function Contact() {
 
                 <br />
 
-                Yiwu, Zhejiang, China
+                Chancheng, Foshan, Guangdong, Euahang China.
 
                 <br /><br />
 
@@ -149,7 +149,7 @@ export default function Contact() {
 
                 <br />
 
-                Bihar, India
+                Delhi, India
 
               </p>
 
@@ -173,11 +173,8 @@ export default function Contact() {
 
               <p className="mt-5 text-blue-100 leading-8">
 
-                support@yiheglobe.com
+                yiheglobal@gmail.com
 
-                <br />
-
-                info@yiheglobe.com
 
               </p>
 
@@ -201,11 +198,11 @@ export default function Contact() {
 
               <p className="mt-5 text-blue-100 leading-8">
 
-                +91 XXXXX XXXXX
+                +91 8789 2255 00
 
                 <br />
 
-                +86 XXX XXXX XXXX
+                +86 159 8616 8618
 
                 <br /><br />
 

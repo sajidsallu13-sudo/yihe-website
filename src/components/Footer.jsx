@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "../assets/images/logo.jpeg";
+import logo from "../assets/images/logo.png";
 import {
   Globe,
   Phone,
@@ -67,11 +67,11 @@ export default function Footer() {
             <img
   src={logo}
   alt="YIHE"
-  className="h-16 w-auto"
+  className="h-20 w-auto"
 />
 
             <p className="text-cyan-300 font-medium mt-2">
-              International Trade Service
+              YIHE International Trade Service
             </p>
 
             <p className="mt-6 text-blue-100 leading-8">
@@ -84,17 +84,17 @@ export default function Footer() {
 
               <div className="flex items-center gap-3 text-blue-100">
                 <Phone size={18} className="text-cyan-300" />
-                +91 XXXXX XXXXX
+                +91 8789225500
               </div>
 
               <div className="flex items-center gap-3 text-blue-100">
                 <Mail size={18} className="text-cyan-300" />
-                info@yihetrade.com
+                yiheglobal@gmail.com
               </div>
 
               <div className="flex items-center gap-3 text-blue-100">
                 <MapPin size={18} className="text-cyan-300" />
-                China Office | India Office
+                China | India | Middle East  | Africa
               </div>
 
             </div>
@@ -241,7 +241,7 @@ export default function Footer() {
 
               <p className="text-sm text-blue-300 mt-2">
 
-                Designed for Global Import & Export Business
+                Designed for YIHE Global
 
               </p>
 

@@ -58,11 +58,7 @@ export default function About() {
 
           <p className="mt-8 text-slate-600 leading-8 text-lg">
 
-            YIHE International Trade Service helps businesses source
-            premium-quality products from trusted manufacturers around
-            the world. From supplier verification to logistics and
-            documentation, we provide complete import and export
-            solutions under one roof.
+            Headquartered in Foshan, China-the manufacturing heart of Guangdong-Yihe Group is a modern global trading entity. We bridge the gap between high-capacity Chinese manufacturing and international buyers. By integrating our own in-house production facilities, trusted factory networks, local quality assurance, and direct overseas branches, we eliminate trade friction, quality risks, and supply chain delays.
 
           </p>
 

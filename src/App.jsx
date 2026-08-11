@@ -11,10 +11,12 @@ import RequestQuote from "./pages/RequestQuote";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollProgress from "./components/ScrollProgress";
+import LoadingScreen from "./components/LoadingScreen";
 
 function App() {
   return (
     <>
+    <LoadingScreen />
     <ScrollProgress />
    <Navbar />
 

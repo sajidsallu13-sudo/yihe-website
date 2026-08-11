@@ -1,3 +1,4 @@
+import logo from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import {
@@ -6,7 +7,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import logo from "../assets/images/logo.jpeg";
 
 const links = [
   { name: "Home", path: "/" },
@@ -60,18 +60,10 @@ export default function Navbar() {
         <img
           src={logo}
           alt="YIHE"
-          className="h-14 w-auto transition-all duration-500 group-hover:scale-110"
+          className="h-16 w-auto transition-all duration-500 group-hover:scale-110"
         />
 
-        <div>
-          <h2 className="text-2xl font-bold text-[#0F2D66] tracking-wide">
-            YIHE
-          </h2>
-
-          <p className="text-xs text-gray-600 tracking-wider uppercase">
-            International Trade Service
-          </p>
-        </div>
+        
       </Link>
 
       {/* ================= DESKTOP MENU ================= */}
