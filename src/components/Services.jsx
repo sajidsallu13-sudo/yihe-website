@@ -42,7 +42,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-14 bg-white">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -52,18 +52,18 @@ export default function Services() {
             Our Services
           </span>
 
-          <h2 className="text-5xl font-bold mt-4">
+          <h2 className="text-4xl font-bold mt-3">
             Complete Import & Export Solutions
           </h2>
 
-          <p className="mt-5 max-w-2xl mx-auto text-gray-600">
+          <p className="mt-3 max-w-2xl mx-auto text-gray-600 leading-6">
             From sourcing products to international shipping,
             YIHE provides end-to-end trade solutions for businesses worldwide.
           </p>
 
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
           {services.map((service, index) => {
 
@@ -73,27 +73,27 @@ export default function Services() {
 
               <div
                 key={index}
-                className="rounded-3xl border p-8 hover:bg-[#0F2D66] hover:text-white transition-all duration-300 group shadow-sm hover:shadow-xl"
+                className="rounded-3xl border p-6 hover:bg-[#0F2D66] hover:text-white transition-all duration-300 group shadow-sm hover:shadow-xl"
               >
 
-                <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center group-hover:bg-white">
+                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center group-hover:bg-white">
 
                   <Icon
-                    size={34}
+                    size={30}
                     className="text-blue-700"
                   />
 
                 </div>
 
-                <h3 className="text-2xl font-bold mt-6">
+                <h3 className="text-xl font-bold mt-4">
                   {service.title}
                 </h3>
 
-                <p className="mt-4 text-gray-500 group-hover:text-gray-200">
+                <p className="mt-3 text-gray-500 group-hover:text-gray-200 leading-6">
                   {service.desc}
                 </p>
 
-                <button className="mt-8 text-blue-700 group-hover:text-yellow-300 font-semibold">
+                <button className="mt-5 text-blue-700 group-hover:text-yellow-300 font-semibold">
                   Learn More →
                 </button>
 

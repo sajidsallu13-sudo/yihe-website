@@ -7,6 +7,9 @@ import About from "../components/About";
 import GlobalPresence from "../components/GlobalPresence";
 import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
+import Gallery from "../components/Gallery";
+import FounderMessage from "../components/FounderMessage";
+
 export default function Home(){
 
 return(
@@ -14,10 +17,12 @@ return(
 <>
 
 <Hero/>
+<FounderMessage />
 <WhyChoose/>
 <Services/>
 <TradeProcess/>
 <ProductCategories/>
+<Gallery />
 <About/>
 <GlobalPresence/>
 <CTASection/>

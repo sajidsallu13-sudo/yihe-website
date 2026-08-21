@@ -55,7 +55,7 @@ function TreeCard({ items }) {
 
       {/* Header */}
 
-      <div className="flex items-center gap-4 border-b border-slate-100 px-8 py-6">
+      <div className="flex items-center gap-4 border-b border-slate-100 px-6 py-4">
 
         <div className="rounded-2xl bg-blue-100 p-3">
 
@@ -79,7 +79,7 @@ function TreeCard({ items }) {
 
       {/* Tree List */}
 
-      <div className="p-8">
+      <div className="p-5">
 
         {items.map((item, index) => {
 
@@ -91,7 +91,7 @@ function TreeCard({ items }) {
               key={item.slug}
               to={`/products#${item.slug}`}
               className="group flex items-center justify-between
-              rounded-xl px-4 py-3 mb-2
+              rounded-xl px-3 py-2 mb-1
               transition-all duration-300
               hover:bg-blue-50"
             >
@@ -139,7 +139,7 @@ function TreeCard({ items }) {
 
 export default function ProductCategories() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-14">
 
       {/* Background Glow */}
       <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-300 blur-[180px] opacity-20"></div>
@@ -165,18 +165,18 @@ export default function ProductCategories() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: .7 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-10 text-center"
         >
 
           <span className="inline-block rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold uppercase tracking-[4px] text-blue-700">
             Our Products
           </span>
 
-          <h2 className="mt-6 text-5xl font-extrabold text-slate-900">
+          <h2 className="mt-3 text-4xl font-extrabold text-slate-900">
             Product Categories
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-3 max-w-3xl text-base leading-6 text-slate-600">
             Explore our wide range of products sourced from trusted
             manufacturers worldwide. Click any category to learn more.
           </p>
@@ -185,7 +185,7 @@ export default function ProductCategories() {
 
         {/* ================= TREE ================= */}
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
 
           <TreeCard items={leftProducts} />
 
@@ -200,7 +200,7 @@ export default function ProductCategories() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: .2 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-10 text-center"
         >
 
           <h3 className="text-2xl font-bold text-slate-900">
@@ -212,7 +212,7 @@ export default function ProductCategories() {
             verify suppliers and manage complete import & export solutions.
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-5">
+          <div className="mt-5 flex flex-wrap justify-center gap-4">
 
             <Link
               to="/products"

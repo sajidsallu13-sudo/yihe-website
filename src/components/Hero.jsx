@@ -12,9 +12,9 @@ export default function Hero() {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#071B45] via-[#0F2D66]/95 to-[#0F2D66]/70"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-6 lg:py-8">
 
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
 
           {/* LEFT */}
           <motion.div
@@ -27,7 +27,7 @@ export default function Hero() {
               <span>Trusted Global Import & Export Partner</span>
             </div>
 
-            <h1 className="mt-8 text-5xl lg:text-7xl font-extrabold leading-tight text-white">
+            <h1 className="mt-6 text-4xl lg:text-6xl font-extrabold leading-tight text-white">
               Connecting
               <span className="block text-yellow-400">
                 Global Business
@@ -35,13 +35,13 @@ export default function Hero() {
               Without Limits
             </h1>
 
-            <p className="mt-8 text-lg leading-8 text-blue-100 max-w-xl">
+            <p className="mt-6 text-lg leading-8 text-blue-100 max-w-xl">
               YIHE International Trade Service provides complete Import,
               Export, Product Sourcing, Freight Forwarding and Global Trade
               Solutions for businesses worldwide.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-5">
+            <div className="mt-7 flex flex-wrap gap-5">
 
               <Link
                 to="/quote"
@@ -90,8 +90,8 @@ export default function Hero() {
             <img
               src={heroImage}
               alt="Cargo"
-              className="rounded-3xl shadow-2xl w-full object-cover"
-            />
+              className="h-[300px] lg:h-[360px] w-full rounded-3xl object-cover shadow-2xl"
+            /> 
 
             {/* Sea Freight */}
 
