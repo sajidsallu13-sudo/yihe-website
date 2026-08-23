@@ -40,7 +40,7 @@ const products = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#071C47] via-[#081F4D] to-[#04122F] pt-20">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#071C47] via-[#081F4D] to-[#04122F] pt-12 pb-6">
 
       {/* Background Glow */}
       <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-cyan-500/10 blur-[140px]" />
@@ -58,7 +58,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
 
           {/* Company */}
 
@@ -67,20 +67,20 @@ export default function Footer() {
             <img
   src={logo}
   alt="YIHE"
-  className="h-20 w-auto"
+  className="h-16 w-auto"
 />
 
             <p className="text-cyan-300 font-medium mt-2">
               YIHE International Trade Service
             </p>
 
-            <p className="mt-6 text-blue-100 leading-8">
+            <p className="mt-4 text-blue-100 leading-6">
               We provide complete import & export solutions,
               verified sourcing, factory inspection,
               quality control and worldwide logistics support.
             </p>
 
-            <div className="space-y-4 mt-8">
+            <div className="space-y-3 mt-5">
 
               <div className="flex items-center gap-3 text-blue-100">
                 <Phone size={18} className="text-cyan-300" />
@@ -105,11 +105,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-white text-xl font-semibold mb-6">
+            <h3 className="text-white text-xl font-semibold mb-4">
               Quick Links
             </h3>
 
-            <ul className="space-y-4">
+            <ul className="space-y-2.5">
 
               {quickLinks.map((item) => (
 
@@ -187,7 +187,7 @@ export default function Footer() {
 
                 {/* Bottom Section */}
 
-        <div className="mt-16 border-t border-white/10 pt-8">
+        <div className="mt-10 border-t border-white/10 pt-5">
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
@@ -215,7 +215,7 @@ export default function Footer() {
                       y: -5,
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-12 h-12 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center text-cyan-300 hover:bg-cyan-400 hover:text-[#081F4D] transition-all duration-300"
+                    className="w-10 h-10 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center text-cyan-300 hover:bg-cyan-400 hover:text-[#081F4D] transition-all duration-300"
                   >
                     <Icon size={20} />
                   </motion.a>

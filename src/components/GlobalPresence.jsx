@@ -3,7 +3,7 @@ import { Plane, Ship } from "lucide-react";
 
 export default function GlobalPresence() {
   return (
-    <section className="relative py-28 overflow-hidden bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
+    <section className="relative py-14 overflow-hidden bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
 
       {/* Glow */}
       <div className="absolute -top-52 -left-52 h-[420px] w-[420px] rounded-full bg-cyan-400/20 blur-[160px]" />
@@ -36,11 +36,11 @@ export default function GlobalPresence() {
             Global Presence
           </span>
 
-          <h2 className="mt-5 text-5xl font-bold text-white">
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold text-white">
             Connecting Businesses Across The World
           </h2>
 
-          <p className="mt-6 text-blue-100 max-w-3xl mx-auto leading-8">
+          <p className="mt-3 text-blue-100 max-w-3xl mx-auto leading-6">
             YIHE International Trade Service connects trusted manufacturers,
             suppliers and buyers through global sourcing, logistics,
             inspection and supply chain management.
@@ -50,7 +50,7 @@ export default function GlobalPresence() {
 
         {/* Main Grid */}
 
-        <div className="grid lg:grid-cols-2 gap-12 mt-20">
+        <div className="grid lg:grid-cols-2 gap-8 mt-10">
 
           {/* LEFT */}
 
@@ -59,7 +59,7 @@ export default function GlobalPresence() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .8 }}
             viewport={{ once: true }}
-            className="relative h-[560px] rounded-[35px]
+            className="relative h-[430px] lg:h-[460px] rounded-[30px]
             border border-white/10
             bg-white/10
             backdrop-blur-xl
@@ -228,18 +228,18 @@ export default function GlobalPresence() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .8 }}
             viewport={{ once: true }}
-            className="rounded-[35px]
+            className="rounded-[30px]
             border border-white/10
             bg-white/10
             backdrop-blur-xl
-            p-10"
+            p-6"
           >
 
-            <h3 className="text-3xl font-bold text-white">
+            <h3 className="text-2xl font-bold text-white">
               Global Trade Network
             </h3>
 
-            <p className="mt-5 text-blue-100 leading-8">
+            <p className="mt-3 text-blue-100 leading-6">
               We provide complete import & export solutions with trusted
               manufacturers, quality inspection, shipping management and
               worldwide delivery.
@@ -247,10 +247,10 @@ export default function GlobalPresence() {
 
             {/* Stats Placeholder */}
 
-            <div className="grid grid-cols-2 gap-5 mt-10">
+            <div className="grid grid-cols-2 gap-4 mt-6">
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h4 className="text-5xl font-bold text-cyan-300">
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <h4 className="text-4xl font-bold text-cyan-300">
                   25+
                 </h4>
 
@@ -259,8 +259,8 @@ export default function GlobalPresence() {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h4 className="text-5xl font-bold text-cyan-300">
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <h4 className="text-4xl font-bold text-cyan-300">
                   100+
                 </h4>
 
@@ -269,8 +269,8 @@ export default function GlobalPresence() {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h4 className="text-5xl font-bold text-cyan-300">
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <h4 className="text-4xl font-bold text-cyan-300">
                   500+
                 </h4>
 
@@ -279,8 +279,8 @@ export default function GlobalPresence() {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h4 className="text-5xl font-bold text-cyan-300">
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <h4 className="text-4xl font-bold text-cyan-300">
                   99%
                 </h4>
 

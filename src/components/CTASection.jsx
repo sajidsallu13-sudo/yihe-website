@@ -3,7 +3,7 @@ import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden py-28 bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
+    <section className="relative overflow-hidden py-14 bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
 
       {/* Glow */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-400/20 rounded-full blur-[140px]" />
@@ -26,7 +26,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="rounded-[40px] border border-white/10 bg-white/10 backdrop-blur-xl p-12 lg:p-20 text-center"
+          className="rounded-[30px] border border-white/10 bg-white/10 backdrop-blur-xl p-7 lg:p-10 text-center"
         >
             {/* Heading */}
 
@@ -45,7 +45,7 @@ export default function CTASection() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3 }}
   viewport={{ once: true }}
-  className="mt-8 text-5xl lg:text-6xl font-bold text-white leading-tight"
+  className="mt-5 text-4xl lg:text-5xl font-bold text-white leading-tight"
 >
   Ready to Start Your
   <br />
@@ -59,7 +59,7 @@ export default function CTASection() {
   whileInView={{ opacity: 1 }}
   transition={{ delay: 0.4 }}
   viewport={{ once: true }}
-  className="mt-8 max-w-3xl mx-auto text-blue-100 text-lg leading-8"
+  className="mt-4 max-w-3xl mx-auto text-blue-100 leading-7"
 >
   Partner with YIHE International Trade Service for reliable sourcing,
   factory verification, quality inspection, international logistics and
@@ -68,13 +68,13 @@ export default function CTASection() {
 
 {/* Buttons */}
 
-<div className="mt-12 flex flex-wrap justify-center gap-6">
+<div className="mt-7 flex flex-wrap justify-center gap-4">
 
   <motion.a
     href="/contact"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="group inline-flex items-center gap-3 rounded-full bg-cyan-400 px-8 py-4 font-semibold text-[#081F4D] shadow-[0_0_35px_rgba(34,211,238,.35)] transition-all duration-300 hover:bg-cyan-300"
+    className="group inline-flex items-center gap-3 rounded-full bg-cyan-400 px-7 py-3 font-semibold text-[#081F4D] shadow-[0_0_35px_rgba(34,211,238,.35)] transition-all duration-300 hover:bg-cyan-300"
   >
     Request a Free Quote
 
@@ -90,7 +90,7 @@ export default function CTASection() {
     rel="noreferrer"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-8 py-4 font-semibold text-white hover:border-cyan-300 hover:bg-white/20 transition-all duration-300"
+    className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-7 py-3 font-semibold text-white hover:border-cyan-300 hover:bg-white/20 transition-all duration-300"
   >
     <MessageCircle size={22} />
 
@@ -101,7 +101,7 @@ export default function CTASection() {
 
 {/* Trust Points */}
 
-<div className="mt-14 grid md:grid-cols-3 gap-6">
+<div className="mt-8 grid md:grid-cols-3 gap-4">
 
   {[
     "Verified Suppliers",
@@ -111,7 +111,7 @@ export default function CTASection() {
 
     <div
       key={item}
-      className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg px-6 py-5"
+      className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg px-4 py-3"
     >
       <CheckCircle2
         size={22}
@@ -162,7 +162,7 @@ export default function CTASection() {
   whileInView={{ opacity: 1 }}
   transition={{ delay: 0.7 }}
   viewport={{ once: true }}
-  className="mt-14 text-center"
+  className="mt-8 text-center"
 >
 
   <p className="text-blue-200 text-sm tracking-wider uppercase">

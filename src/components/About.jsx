@@ -21,7 +21,7 @@ const features = [
 
 export default function About() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-14">
 
       {/* Background Glow */}
 
@@ -29,7 +29,7 @@ export default function About() {
 
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-200 blur-[180px] opacity-20"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT */}
 
@@ -44,7 +44,7 @@ export default function About() {
             About YIHE
           </span>
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-5 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3 leading-tight">
 
             Your Trusted
 
@@ -56,7 +56,7 @@ export default function About() {
 
           </h2>
 
-          <p className="mt-8 text-slate-600 leading-8 text-lg">
+          <p className="mt-5 text-slate-600 leading-7">
 
             Headquartered in Foshan, China-the manufacturing heart of Guangdong-Yihe Group is a modern global trading entity. We bridge the gap between high-capacity Chinese manufacturing and international buyers. By integrating our own in-house production facilities, trusted factory networks, local quality assurance, and direct overseas branches, we eliminate trade friction, quality risks, and supply chain delays.
 
@@ -64,7 +64,7 @@ export default function About() {
 
           {/* FEATURES */}
 
-          <div className="grid sm:grid-cols-2 gap-4 mt-10">
+          <div className="grid sm:grid-cols-2 gap-3 mt-6">
 
             {features.map((item) => (
 
@@ -90,12 +90,12 @@ export default function About() {
 
           {/* BUTTONS */}
 
-          <div className="flex flex-wrap gap-5 mt-10">
+          <div className="flex flex-wrap gap-4 mt-7">
 
             <Link
               to="/about"
               className="group bg-blue-700 hover:bg-blue-800
-              text-white px-8 py-4 rounded-full
+              text-white px-7 py-4 rounded-full
               font-semibold flex items-center gap-2
               transition"
             >
@@ -115,7 +115,7 @@ export default function About() {
               text-blue-700
               hover:bg-blue-700
               hover:text-white
-              px-8 py-4
+              px-7 py-3
               rounded-full
               font-semibold
               transition"
@@ -142,7 +142,7 @@ export default function About() {
           <img
             src={aboutImage}
             alt="About YIHE"
-            className="rounded-3xl shadow-2xl"
+            className="h-[380px] lg:h-[430px] w-full rounded-3xl object-cover shadow-2xl"
           />
 
           {/* CARD 1 */}
