@@ -5,6 +5,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  MessageCircle,
   Facebook,
   Instagram,
   Linkedin,
@@ -82,14 +83,27 @@ export default function Footer() {
 
             <div className="space-y-3 mt-5">
 
-              <div className="flex items-center gap-3 text-blue-100">
+              <a
+                href="tel:+918789225500"
+                className="flex items-center gap-3 text-blue-100 hover:text-cyan-300 transition"
+              >
                 <Phone size={18} className="text-cyan-300" />
                 +91 8789225500
-              </div>
+              </a>
+
+              <a
+                href="https://wa.me/918789225500"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 text-blue-100 hover:text-cyan-300 hover:underline cursor-pointer transition"
+              >
+                <MessageCircle size={18} className="text-cyan-300" />
+                <span>Chat on WhatsApp</span>
+              </a>
 
               <div className="flex items-center gap-3 text-blue-100">
                 <Mail size={18} className="text-cyan-300" />
-                yiheglobal@gmail.com
+                info@yiheglobe.com
               </div>
 
               <div className="flex items-center gap-3 text-blue-100">

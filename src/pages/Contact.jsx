@@ -173,7 +173,7 @@ export default function Contact() {
 
               <p className="mt-5 text-blue-100 leading-8">
 
-                yiheglobal@gmail.com
+                info@yiheglobe.com
 
 
               </p>
