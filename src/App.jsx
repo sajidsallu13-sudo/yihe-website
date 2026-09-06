@@ -1,6 +1,6 @@
 ﻿import { Routes, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar";
+import EnquiryPopup from "./components/EnquiryPopup";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -13,12 +13,14 @@ import NotFound from "./pages/NotFound";
 import ScrollProgress from "./components/ScrollProgress";
 import LoadingScreen from "./components/LoadingScreen";
 
+
 function App() {
   return (
     <>
     <LoadingScreen />
     <ScrollProgress />
-   <Navbar />
+    <Navbar />
+    <EnquiryPopup />
 
    <div className="pt-20">
     

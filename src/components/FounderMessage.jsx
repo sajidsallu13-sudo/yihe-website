@@ -63,7 +63,7 @@ export default function FounderMessage() {
             <div className="mt-8">
 
               <h3 className="text-2xl font-bold text-white">
-                Founder Name
+                HE LIUPING
               </h3>
 
               <p className="mt-2 text-[#D8C3A5]">
