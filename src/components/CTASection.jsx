@@ -3,180 +3,129 @@ import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden py-14 bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8] py-10 sm:py-12 lg:py-14">
+      <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-cyan-400/20 blur-[130px]" />
+      <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-blue-500/20 blur-[130px]" />
 
-      {/* Glow */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-400/20 rounded-full blur-[140px]" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-[140px]" />
-
-      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundSize: "50px 50px",
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="rounded-[30px] border border-white/10 bg-white/10 backdrop-blur-xl p-7 lg:p-10 text-center"
+          className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/10 p-5 text-center backdrop-blur-xl sm:rounded-3xl sm:p-7 lg:p-8"
         >
-            {/* Heading */}
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.15 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-300 sm:text-xs"
+          >
+            Let's Work Together
+          </motion.span>
 
-<motion.span
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.2 }}
-  viewport={{ once: true }}
-  className="inline-block px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 font-semibold tracking-wider uppercase text-sm"
->
-  Let's Work Together
-</motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            Ready to Start Your
+            <br className="hidden sm:block" />
+            <span className="sm:ml-2 text-cyan-300">Global Trade Journey?</span>
+          </motion.h2>
 
-<motion.h2
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3 }}
-  viewport={{ once: true }}
-  className="mt-5 text-4xl lg:text-5xl font-bold text-white leading-tight"
->
-  Ready to Start Your
-  <br />
-  <span className="text-cyan-300">
-    Global Trade Journey?
-  </span>
-</motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.25 }}
+            viewport={{ once: true }}
+            className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-blue-100 sm:text-base"
+          >
+            Partner with YIHE International Trade Service for reliable sourcing,
+            factory verification, quality inspection, international logistics and
+            complete import solutions from China.
+          </motion.p>
 
-<motion.p
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.4 }}
-  viewport={{ once: true }}
-  className="mt-4 max-w-3xl mx-auto text-blue-100 leading-7"
->
-  Partner with YIHE International Trade Service for reliable sourcing,
-  factory verification, quality inspection, international logistics and
-  complete import solutions from China.
-</motion.p>
+          <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
+            <motion.a
+              href="/quote"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-[#081F4D] shadow-[0_0_25px_rgba(34,211,238,.3)] transition hover:bg-cyan-300 sm:w-auto sm:text-base"
+            >
+              Request a Free Quote
+              <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+            </motion.a>
 
-{/* Buttons */}
+            <motion.a
+              href="https://wa.me/918789225500"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-cyan-300 hover:bg-white/20 sm:w-auto sm:text-base"
+            >
+              <MessageCircle size={19} />
+              Chat on WhatsApp
+            </motion.a>
+          </div>
 
-<div className="mt-7 flex flex-wrap justify-center gap-4">
+          <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3">
+            {["Verified Suppliers", "Fast Global Shipping", "End-to-End Support"].map((item) => (
+              <div
+                key={item}
+                className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 backdrop-blur-lg"
+              >
+                <CheckCircle2 size={18} className="shrink-0 text-cyan-300" />
+                <span className="text-xs font-medium text-blue-100 sm:text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
 
-  <motion.a
-    href="/contact"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="group inline-flex items-center gap-3 rounded-full bg-cyan-400 px-7 py-3 font-semibold text-[#081F4D] shadow-[0_0_35px_rgba(34,211,238,.35)] transition-all duration-300 hover:bg-cyan-300"
-  >
-    Request a Free Quote
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            {[...Array(10)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute h-1.5 w-1.5 rounded-full bg-cyan-300/35"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{ y: [-10, 10, -10], opacity: [0.25, 0.8, 0.25] }}
+                transition={{
+                  duration: 4 + Math.random() * 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
 
-    <ArrowRight
-      size={20}
-      className="transition-transform group-hover:translate-x-1"
-    />
-  </motion.a>
-
-  <motion.a
-    href="https://wa.me/917004722363"
-    target="_blank"
-    rel="noreferrer"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-7 py-3 font-semibold text-white hover:border-cyan-300 hover:bg-white/20 transition-all duration-300"
-  >
-    <MessageCircle size={22} />
-
-    Chat on WhatsApp
-  </motion.a>
-
-</div>
-
-{/* Trust Points */}
-
-<div className="mt-8 grid md:grid-cols-3 gap-4">
-
-  {[
-    "Verified Suppliers",
-    "Fast Global Shipping",
-    "End-to-End Support",
-  ].map((item) => (
-
-    <div
-      key={item}
-      className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg px-4 py-3"
-    >
-      <CheckCircle2
-        size={22}
-        className="text-cyan-300"
-      />
-
-      <span className="text-blue-100 font-medium">
-        {item}
-      </span>
-
-    </div>
-
-  ))}
-
-</div>
-
-{/* Floating Particles */}
-
-<div className="absolute inset-0 pointer-events-none overflow-hidden">
-
-  {[...Array(18)].map((_, i) => (
-    <motion.div
-      key={i}
-      className="absolute w-2 h-2 rounded-full bg-cyan-300/40"
-      style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-      }}
-      animate={{
-        y: [-15, 15, -15],
-        opacity: [0.3, 1, 0.3],
-        scale: [1, 1.6, 1],
-      }}
-      transition={{
-        duration: 4 + Math.random() * 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-  ))}
-
-</div>
-
-{/* Bottom Text */}
-
-<motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.7 }}
-  viewport={{ once: true }}
-  className="mt-8 text-center"
->
-
-  <p className="text-blue-200 text-sm tracking-wider uppercase">
-
-    Trusted by Importers • Exporters • Wholesalers • Retailers Worldwide
-
-  </p>
-
-</motion.div>
-
-</motion.div>
-
-</div>
-
-</section>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.35 }}
+            viewport={{ once: true }}
+            className="mt-5 text-center"
+          >
+            <p className="text-[10px] uppercase tracking-wider text-blue-200 sm:text-xs">
+              Trusted by Importers • Exporters • Wholesalers • Retailers Worldwide
+            </p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 }

@@ -2,10 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FolderTree, ArrowRight } from "lucide-react";
 
-// =============================
-// LEFT PRODUCT LIST
-// =============================
-
 const leftProducts = [
   { name: "Footwear", slug: "footwear" },
   { name: "Garments", slug: "garments" },
@@ -16,10 +12,6 @@ const leftProducts = [
   { name: "Furniture", slug: "furniture" },
   { name: "Toys", slug: "toys" },
 ];
-
-// =============================
-// RIGHT PRODUCT LIST
-// =============================
 
 const rightProducts = [
   { name: "Cosmetics", slug: "cosmetics" },
@@ -33,120 +25,65 @@ const rightProducts = [
   { name: "Medical Equipment", slug: "medical" },
 ];
 
-// =============================
-// TREE CARD
-// =============================
-
 function TreeCard({ items }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      whileHover={{ y: -5 }}
-      className="relative overflow-hidden rounded-3xl
-      bg-white border border-slate-200 shadow-xl
-      hover:shadow-2xl transition-all duration-500"
+      whileHover={{ y: -3 }}
+      className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
     >
-      {/* Gradient Top Border */}
-
       <div className="h-1 bg-gradient-to-r from-blue-700 via-cyan-500 to-yellow-400" />
 
-      {/* Header */}
-
-      <div className="flex items-center gap-4 border-b border-slate-100 px-6 py-4">
-
-        <div className="rounded-2xl bg-blue-100 p-3">
-
-          <FolderTree className="text-blue-700" size={28} />
-
+      <div className="flex items-center gap-3 border-b border-slate-100 px-4 py-3 sm:px-5 sm:py-4">
+        <div className="rounded-xl bg-blue-100 p-2.5">
+          <FolderTree className="text-blue-700" size={22} />
         </div>
 
         <div>
-
-          <h3 className="text-xl font-bold text-slate-900">
-            Product Directory
-          </h3>
-
-          <p className="text-sm text-slate-500">
-            Click any category to explore
-          </p>
-
+          <h3 className="text-base font-bold text-slate-900 sm:text-lg">Product Directory</h3>
+          <p className="text-xs text-slate-500 sm:text-sm">Click any category to explore</p>
         </div>
-
       </div>
 
-      {/* Tree List */}
-
-      <div className="p-5">
-
+      <div className="grid grid-cols-2 gap-x-1 p-3 sm:gap-x-2 sm:p-4 lg:grid-cols-1">
         {items.map((item, index) => {
-
           const last = index === items.length - 1;
 
           return (
-
             <Link
               key={item.slug}
               to={`/products#${item.slug}`}
-              className="group flex items-center justify-between
-              rounded-xl px-3 py-2 mb-1
-              transition-all duration-300
-              hover:bg-blue-50"
+              className="group flex min-w-0 items-center justify-between rounded-lg px-2 py-2 transition-all duration-300 hover:bg-blue-50 sm:px-3"
             >
-
-              <div className="flex items-center gap-3">
-
-                <span className="font-mono text-slate-400">
+              <div className="flex min-w-0 items-center gap-2">
+                <span className="hidden shrink-0 font-mono text-slate-400 sm:inline">
                   {last ? "└──" : "├──"}
                 </span>
-
-                <span
-                  className="font-medium text-slate-700
-                  transition-all duration-300
-                  group-hover:text-blue-700
-                  group-hover:translate-x-1"
-                >
+                <span className="min-w-0 text-xs font-medium leading-5 text-slate-700 transition group-hover:text-blue-700 sm:text-sm">
                   {item.name}
                 </span>
-
               </div>
-
               <ArrowRight
-                size={18}
-                className="text-slate-400
-                transition-all duration-300
-                group-hover:text-blue-700
-                group-hover:translate-x-1"
+                size={15}
+                className="ml-1 shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700"
               />
-
             </Link>
-
           );
-
         })}
-
       </div>
-
     </motion.div>
   );
 }
 
-// ===================================================
-// MAIN COMPONENT
-// ===================================================
-
 export default function ProductCategories() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-14">
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 py-10 sm:py-12 lg:py-14">
+      <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-300 opacity-20 blur-[160px]" />
+      <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-cyan-300 opacity-20 blur-[160px]" />
 
-      {/* Background Glow */}
-      <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-300 blur-[180px] opacity-20"></div>
-
-      <div className="absolute bottom-0 -right-40 h-96 w-96 rounded-full bg-cyan-300 blur-[180px] opacity-20"></div>
-
-      {/* Decorative Grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -154,98 +91,69 @@ export default function ProductCategories() {
             "linear-gradient(#1e40af 1px, transparent 1px), linear-gradient(to right, #1e40af 1px, transparent 1px)",
           backgroundSize: "45px 45px",
         }}
-      ></div>
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-
-        {/* ================= HEADING ================= */}
-
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
+          transition={{ duration: 0.55 }}
           viewport={{ once: true }}
-          className="mb-10 text-center"
+          className="mb-7 text-center sm:mb-9"
         >
-
-          <span className="inline-block rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold uppercase tracking-[4px] text-blue-700">
+          <span className="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[3px] text-blue-700 sm:text-xs">
             Our Products
           </span>
 
-          <h2 className="mt-3 text-4xl font-extrabold text-slate-900">
+          <h2 className="mt-3 text-3xl font-extrabold text-slate-900 sm:text-4xl">
             Product Categories
           </h2>
 
-          <p className="mx-auto mt-3 max-w-3xl text-base leading-6 text-slate-600">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
             Explore our wide range of products sourced from trusted
             manufacturers worldwide. Click any category to learn more.
           </p>
-
         </motion.div>
 
-        {/* ================= TREE ================= */}
-
-        <div className="grid gap-5 lg:grid-cols-2">
-
+        <div className="grid gap-4 lg:grid-cols-2">
           <TreeCard items={leftProducts} />
-
           <TreeCard items={rightProducts} />
-
         </div>
 
-        {/* ================= CTA ================= */}
-
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: .2 }}
+          transition={{ delay: 0.15 }}
           viewport={{ once: true }}
-          className="mt-10 text-center"
+          className="mt-7 text-center sm:mt-8"
         >
-
-          <h3 className="text-2xl font-bold text-slate-900">
+          <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
             Looking for a Specific Product?
           </h3>
 
-          <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
             Our sourcing experts help you find reliable manufacturers,
             verify suppliers and manage complete import & export solutions.
           </p>
 
-          <div className="mt-5 flex flex-wrap justify-center gap-4">
-
+          <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               to="/products"
-              className="group inline-flex items-center gap-3 rounded-full
-              bg-gradient-to-r from-blue-700 to-blue-900
-              px-8 py-4 font-semibold text-white
-              shadow-xl transition-all duration-300
-              hover:scale-105 hover:shadow-2xl"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.02] hover:shadow-xl sm:w-auto sm:text-base"
             >
               Explore Complete Catalogue
-
-              <ArrowRight
-                size={20}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
+              <ArrowRight size={18} className="transition group-hover:translate-x-1" />
             </Link>
 
             <Link
-              to="/contact"
-              className="rounded-full border-2 border-blue-700
-              px-8 py-4 font-semibold text-blue-700
-              transition-all duration-300
-              hover:bg-blue-700 hover:text-white"
+              to="/quote"
+              className="w-full rounded-full border-2 border-blue-700 px-6 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-700 hover:text-white sm:w-auto sm:text-base"
             >
               Get Free Quote
             </Link>
-
           </div>
-
         </motion.div>
-
       </div>
-
     </section>
   );
 }

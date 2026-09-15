@@ -42,49 +42,48 @@ const data = [
 
 export default function WhyChoose() {
   return (
-    <section className="py-14 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="text-center mb-10">
-          <span className="text-blue-700 font-semibold uppercase tracking-widest">
+    <section className="bg-slate-50 py-10 sm:py-12 lg:py-14">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mb-7 text-center sm:mb-9">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-700 sm:text-sm">
             Why Choose Us
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 text-slate-900">
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
             Why Businesses Choose YIHE
           </h2>
 
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">
             We provide complete international trade solutions from sourcing
             to shipping with professional support and trusted partners.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 shadow hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+                className="flex items-start gap-4 rounded-2xl bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-5"
               >
-                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-4">
-                  <Icon size={30} className="text-blue-700" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-100 sm:h-12 sm:w-12">
+                  <Icon size={24} className="text-blue-700" />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-3">
-                  {item.title}
-                </h3>
+                <div className="min-w-0">
+                  <h3 className="text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                    {item.title}
+                  </h3>
 
-                <p className="text-gray-600 leading-7">
-                  {item.desc}
-                </p>
+                  <p className="mt-2 text-sm leading-5 text-gray-600 sm:leading-6">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
-
         </div>
       </div>
     </section>

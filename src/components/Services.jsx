@@ -42,70 +42,52 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-14 bg-white">
-
-      <div className="max-w-7xl mx-auto px-6">
-
+    <section className="bg-white py-10 sm:py-12 lg:py-14">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
-
-          <span className="text-blue-700 uppercase font-semibold tracking-widest">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-700 sm:text-sm">
             Our Services
           </span>
 
-          <h2 className="text-4xl font-bold mt-3">
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
             Complete Import & Export Solutions
           </h2>
 
-          <p className="mt-3 max-w-2xl mx-auto text-gray-600 leading-6">
-            From sourcing products to international shipping,
-            YIHE provides end-to-end trade solutions for businesses worldwide.
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">
+            From sourcing products to international shipping, YIHE provides
+            end-to-end trade solutions for businesses worldwide.
           </p>
-
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-9 lg:grid-cols-3">
           {services.map((service, index) => {
-
             const Icon = service.icon;
 
             return (
-
               <div
                 key={index}
-                className="rounded-3xl border p-6 hover:bg-[#0F2D66] hover:text-white transition-all duration-300 group shadow-sm hover:shadow-xl"
+                className="group rounded-2xl border border-slate-200 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#0F2D66] hover:text-white hover:shadow-xl sm:p-5"
               >
-
-                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center group-hover:bg-white">
-
-                  <Icon
-                    size={30}
-                    className="text-blue-700"
-                  />
-
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 transition group-hover:bg-white sm:h-12 sm:w-12">
+                  <Icon size={24} className="text-blue-700" />
                 </div>
 
-                <h3 className="text-xl font-bold mt-4">
+                <h3 className="mt-3 text-lg font-bold sm:text-xl">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 text-gray-500 group-hover:text-gray-200 leading-6">
+                <p className="mt-2 text-sm leading-6 text-gray-500 group-hover:text-gray-200">
                   {service.desc}
                 </p>
 
-                <button className="mt-5 text-blue-700 group-hover:text-yellow-300 font-semibold">
+                <button className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-yellow-300 sm:text-base">
                   Learn More →
                 </button>
-
               </div>
-
             );
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

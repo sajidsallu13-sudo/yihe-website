@@ -35,77 +35,59 @@ const process = [
 
 export default function TradeProcess() {
   return (
-    <section className="py-14 bg-slate-100">
-
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="text-center mb-10">
-
-          <span className="uppercase tracking-widest text-blue-700 font-semibold">
+    <section className="bg-slate-100 py-10 sm:py-12 lg:py-14">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mb-7 text-center sm:mb-9">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-700 sm:text-sm">
             How We Work
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
             Our Trade Process
           </h2>
 
-          <p className="mt-3 text-gray-600 max-w-3xl mx-auto leading-6">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-600 sm:text-base">
             A simple, transparent and efficient process that ensures your
             international trade is smooth from sourcing to final delivery.
           </p>
-
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-5">
-
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((item, index) => {
-
             const Icon = item.icon;
 
             return (
-
               <div
                 key={index}
-                className="relative bg-white rounded-3xl p-6 shadow hover:shadow-xl transition duration-300"
+                className="relative rounded-2xl bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-5"
               >
-
-                <div className="absolute top-5 right-5 text-5xl font-bold text-blue-100">
+                <div className="absolute right-4 top-3 text-4xl font-bold text-blue-100 sm:text-5xl">
                   {item.step}
                 </div>
 
-                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center">
-
-                  <Icon
-                    size={30}
-                    className="text-blue-700"
-                  />
-
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 sm:h-12 sm:w-12">
+                  <Icon size={24} className="text-blue-700" />
                 </div>
 
-                <h3 className="text-xl font-bold mt-5">
+                <h3 className="mt-4 pr-9 text-lg font-bold leading-snug text-slate-900 sm:text-xl">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-gray-600 leading-6">
+                <p className="mt-2 text-sm leading-6 text-gray-600">
                   {item.desc}
                 </p>
 
                 {index !== process.length - 1 && (
                   <ArrowRight
-                    className="hidden lg:block absolute -right-5 top-1/2 text-blue-600"
-                    size={30}
+                    className="absolute -right-4 top-1/2 hidden text-blue-600 lg:block"
+                    size={24}
                   />
                 )}
-
               </div>
-
             );
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

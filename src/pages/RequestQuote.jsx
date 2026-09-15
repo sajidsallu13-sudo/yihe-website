@@ -6,9 +6,12 @@ import {
   Globe2,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function RequestQuote() {
+  const location = useLocation();
+
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -27,6 +30,19 @@ export default function RequestQuote() {
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
+  /* =========================================
+     PREFILL PRODUCT FROM PRODUCTS PAGE
+  ========================================= */
+
+  useEffect(() => {
+    if (location.state?.product) {
+      setForm((prev) => ({
+        ...prev,
+        productName: location.state.product,
+      }));
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -126,214 +142,430 @@ YIHE International Trade Service Website
     <>
       {/* ================= HERO ================= */}
 
-      <section className="relative overflow-hidden pt-36 pb-28 bg-gradient-to-br from-[#081F4D] via-[#0B2F73] to-[#114DA8]">
+      <section
+        className="
+          relative
+          overflow-hidden
 
+          bg-gradient-to-br
+          from-[#081F4D]
+          via-[#0B2F73]
+          to-[#114DA8]
+
+          py-10
+          sm:py-12
+          md:py-14
+          lg:py-16
+        "
+      >
         {/* Glow */}
 
-        <div className="absolute -top-60 -left-60 w-[600px] h-[600px] rounded-full bg-cyan-400/20 blur-[180px]" />
+        <div className="absolute -top-40 -left-40 w-[360px] h-[360px] md:w-[450px] md:h-[450px] rounded-full bg-cyan-400/20 blur-[150px]" />
 
-        <div className="absolute -bottom-60 -right-60 w-[600px] h-[600px] rounded-full bg-blue-500/20 blur-[180px]" />
+        <div className="absolute -bottom-40 -right-40 w-[360px] h-[360px] md:w-[450px] md:h-[450px] rounded-full bg-blue-500/20 blur-[150px]" />
 
         {/* Grid */}
 
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.3) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+              "linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.4) 1px, transparent 1px)",
+            backgroundSize: "50px 50px",
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center"
           >
+            <span
+              className="
+                inline-block
+                px-4
+                py-1.5
 
-            <span className="inline-block px-6 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 font-semibold uppercase tracking-wider text-sm">
+                rounded-full
+
+                border
+                border-cyan-400/30
+
+                bg-cyan-400/10
+
+                text-[11px]
+                sm:text-xs
+
+                text-cyan-300
+
+                font-semibold
+                uppercase
+                tracking-wider
+              "
+            >
               Request Free Quote
             </span>
 
-            <h1 className="mt-8 text-5xl lg:text-7xl font-bold text-white leading-tight">
+            <h1
+              className="
+                mt-4
+                sm:mt-5
+
+                text-3xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
+
+                font-bold
+                text-white
+
+                leading-[1.08]
+              "
+            >
               Get Your
               <br />
+
               <span className="text-cyan-300">
                 Best Import Quote
               </span>
             </h1>
 
-            <p className="mt-8 max-w-3xl mx-auto text-blue-100 text-xl leading-9">
-              Tell us what product you need and our sourcing team
-              will provide the best factory price, verified suppliers,
-              logistics solution and complete quotation.
+            <p
+              className="
+                mt-4
+                sm:mt-5
+
+                max-w-2xl
+                mx-auto
+
+                text-sm
+                sm:text-base
+                md:text-lg
+
+                text-blue-100
+
+                leading-6
+                md:leading-7
+              "
+            >
+              Tell us what product you need and our sourcing team will
+              provide factory pricing, supplier support, logistics options
+              and a complete quotation.
             </p>
 
-            <div className="mt-12 flex flex-wrap justify-center gap-5">
-
+            <div className="mt-6 sm:mt-7">
               <a
                 href="#quote-form"
-                className="group inline-flex items-center gap-3 rounded-full bg-cyan-400 px-8 py-4 font-semibold text-[#081F4D] shadow-[0_0_35px_rgba(34,211,238,.35)] hover:bg-cyan-300 transition"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+
+                  rounded-full
+
+                  bg-cyan-400
+
+                  px-6
+                  py-3
+
+                  font-semibold
+                  text-[#081F4D]
+
+                  shadow-[0_0_25px_rgba(34,211,238,.3)]
+
+                  hover:bg-cyan-300
+
+                  transition
+                "
               >
                 Start Quote
 
                 <ArrowRight
-                  size={20}
+                  size={18}
                   className="group-hover:translate-x-1 transition"
                 />
               </a>
-
             </div>
-
           </motion.div>
 
+          {/* ================= FEATURE CARDS ================= */}
 
-          {/* FEATURE CARDS */}
+          <div
+            className="
+              grid
+              grid-cols-1
+              sm:grid-cols-3
 
-          <div className="grid md:grid-cols-3 gap-6 mt-20">
+              gap-3
+              sm:gap-4
 
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
+              mt-7
+              sm:mt-8
+            "
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="
+                rounded-2xl
+                bg-white/[0.08]
 
+                border
+                border-white/10
+
+                backdrop-blur-xl
+
+                p-4
+                sm:p-5
+
+                text-center
+              "
+            >
               <Package
                 className="mx-auto text-cyan-300"
-                size={42}
+                size={28}
               />
 
-              <h3 className="mt-5 text-2xl font-bold text-white">
+              <h3 className="mt-3 text-base sm:text-lg font-bold text-white">
                 Product Sourcing
               </h3>
 
-              <p className="mt-4 text-blue-100">
+              <p className="mt-1 text-xs sm:text-sm text-blue-100">
                 Direct Factory Pricing
               </p>
+            </motion.div>
 
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.18 }}
+              className="
+                rounded-2xl
+                bg-white/[0.08]
 
+                border
+                border-white/10
 
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
+                backdrop-blur-xl
 
+                p-4
+                sm:p-5
+
+                text-center
+              "
+            >
               <ShieldCheck
                 className="mx-auto text-cyan-300"
-                size={42}
+                size={28}
               />
 
-              <h3 className="mt-5 text-2xl font-bold text-white">
+              <h3 className="mt-3 text-base sm:text-lg font-bold text-white">
                 Verified Suppliers
               </h3>
 
-              <p className="mt-4 text-blue-100">
+              <p className="mt-1 text-xs sm:text-sm text-blue-100">
                 Trusted Manufacturing Partners
               </p>
+            </motion.div>
 
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.26 }}
+              className="
+                rounded-2xl
+                bg-white/[0.08]
 
+                border
+                border-white/10
 
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
+                backdrop-blur-xl
 
+                p-4
+                sm:p-5
+
+                text-center
+              "
+            >
               <Globe2
                 className="mx-auto text-cyan-300"
-                size={42}
+                size={28}
               />
 
-              <h3 className="mt-5 text-2xl font-bold text-white">
+              <h3 className="mt-3 text-base sm:text-lg font-bold text-white">
                 Worldwide Shipping
               </h3>
 
-              <p className="mt-4 text-blue-100">
+              <p className="mt-1 text-xs sm:text-sm text-blue-100">
                 Air • Sea • Express
               </p>
-
-            </div>
-
+            </motion.div>
           </div>
-
         </div>
-
       </section>
 
-
-      {/* ================= REQUEST QUOTE FORM ================= */}
+      {/* ================= QUOTE FORM ================= */}
 
       <motion.section
         id="quote-form"
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-24 bg-[#061734]"
+        className="
+          scroll-mt-24
+          bg-[#061734]
+
+          py-10
+          sm:py-12
+          md:py-14
+          lg:py-16
+        "
       >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-[0.75fr_1.25fr]
 
-        <div className="max-w-7xl mx-auto px-6">
+              gap-8
+              md:gap-10
+              lg:gap-12
 
-          <div className="grid lg:grid-cols-2 gap-16">
+              items-start
+            "
+          >
+            {/* ================= LEFT ================= */}
 
-            {/* LEFT SIDE */}
+            <div className="lg:sticky lg:top-28">
+              <span
+                className="
+                  inline-block
+                  px-4
+                  py-1.5
 
-            <div>
+                  rounded-full
 
-              <span className="inline-block px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 uppercase text-sm font-semibold">
+                  border
+                  border-cyan-400/30
+
+                  bg-cyan-400/10
+
+                  text-[11px]
+                  sm:text-xs
+
+                  text-cyan-300
+
+                  uppercase
+                  font-semibold
+                "
+              >
                 Request Quote
               </span>
 
-              <h2 className="mt-8 text-5xl font-bold text-white leading-tight">
+              <h2
+                className="
+                  mt-4
+
+                  text-3xl
+                  sm:text-4xl
+                  lg:text-5xl
+
+                  font-bold
+                  text-white
+
+                  leading-tight
+                "
+              >
                 Tell Us Your
                 <br />
-                Product Requirement
+
+                <span className="text-cyan-300">
+                  Product Requirement
+                </span>
               </h2>
 
-              <p className="mt-8 text-blue-100 text-lg leading-8">
-                Fill in the details below and our sourcing specialists
-                will prepare the best quotation from verified factories.
+              <p
+                className="
+                  mt-4
+
+                  text-sm
+                  sm:text-base
+
+                  text-blue-100
+
+                  leading-6
+                  sm:leading-7
+
+                  max-w-lg
+                "
+              >
+                Fill in the details and our sourcing specialists will prepare
+                a quotation based on your product requirement.
               </p>
 
-              <div className="mt-10 space-y-5">
+              <div
+                className="
+                  mt-5
+                  sm:mt-6
 
-                <div className="flex items-center gap-3 text-blue-100">
-                  <span className="text-cyan-300">✓</span>
-                  Direct factory pricing
-                </div>
+                  grid
+                  grid-cols-2
+                  lg:grid-cols-1
 
-                <div className="flex items-center gap-3 text-blue-100">
-                  <span className="text-cyan-300">✓</span>
-                  Verified suppliers
-                </div>
+                  gap-x-3
+                  gap-y-2.5
 
-                <div className="flex items-center gap-3 text-blue-100">
-                  <span className="text-cyan-300">✓</span>
-                  Quality inspection
-                </div>
+                  text-xs
+                  sm:text-sm
+                  md:text-base
 
-                <div className="flex items-center gap-3 text-blue-100">
-                  <span className="text-cyan-300">✓</span>
-                  Global shipping support
-                </div>
+                  text-blue-100
+                "
+              >
+                <p>✓ Direct factory pricing</p>
+                <p>✓ Verified suppliers</p>
+                <p>✓ Quality inspection</p>
+                <p>✓ Global shipping support</p>
 
-                <div className="flex items-center gap-3 text-blue-100">
-                  <span className="text-cyan-300">✓</span>
-                  Fast quotation within 24 hours
-                </div>
-
+                <p className="col-span-2 lg:col-span-1">
+                  ✓ Fast quotation support
+                </p>
               </div>
-
             </div>
 
+            {/* ================= FORM ================= */}
 
-            {/* RIGHT SIDE FORM */}
+            <div
+              className="
+                rounded-2xl
+                sm:rounded-3xl
 
-            <div className="rounded-[35px] border border-white/10 bg-white/10 backdrop-blur-xl p-10">
+                border
+                border-white/10
 
+                bg-white/[0.08]
+
+                backdrop-blur-xl
+
+                p-4
+                sm:p-6
+                md:p-7
+              "
+            >
               <form
                 onSubmit={handleSubmit}
-                className="space-y-6"
+                className="space-y-3 sm:space-y-4"
               >
-
                 {/* NAME + COMPANY */}
 
-                <div className="grid md:grid-cols-2 gap-6">
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <input
                     type="text"
                     name="name"
@@ -341,7 +573,31 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="Full Name"
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="
+                      w-full
+                      min-w-0
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
                   />
 
                   <input
@@ -350,16 +606,37 @@ YIHE International Trade Service Website
                     value={form.company}
                     onChange={handleChange}
                     placeholder="Company Name"
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="
+                      w-full
+                      min-w-0
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
                   />
-
                 </div>
-
 
                 {/* EMAIL + PHONE */}
 
-                <div className="grid md:grid-cols-2 gap-6">
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <input
                     type="email"
                     name="email"
@@ -367,7 +644,31 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="Email Address"
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="
+                      w-full
+                      min-w-0
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
                   />
 
                   <input
@@ -377,16 +678,37 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="Phone Number"
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="
+                      w-full
+                      min-w-0
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
                   />
-
                 </div>
-
 
                 {/* COUNTRY + CATEGORY */}
 
-                <div className="grid md:grid-cols-2 gap-6">
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <input
                     type="text"
                     name="country"
@@ -394,66 +716,112 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="Country"
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
-                  />
+                    className="
+                      w-full
+                      min-w-0
 
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
+                  />
 
                   <select
                     name="category"
                     value={form.category}
                     onChange={handleChange}
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-300"
-                  >
+                    className="
+                      w-full
+                      min-w-0
 
-                    <option value="" disabled className="text-black">
+                      rounded-xl
+
+                      bg-[#102c5c]
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
+                  >
+                    <option value="" disabled>
                       Product Category
                     </option>
 
-                    <option className="text-black">
+                    <option value="Footwear">
                       Footwear
                     </option>
 
-                    <option className="text-black">
+                    <option value="Garments">
                       Garments
                     </option>
 
-                    <option className="text-black">
+                    <option value="Furniture">
                       Furniture
                     </option>
 
-                    <option className="text-black">
+                    <option value="Electronics">
                       Electronics
                     </option>
 
-                    <option className="text-black">
+                    <option value="Machinery">
                       Machinery
                     </option>
 
-                    <option className="text-black">
+                    <option value="Home Decor">
                       Home Decor
                     </option>
 
-                    <option className="text-black">
+                    <option value="Medical">
                       Medical
                     </option>
 
-                    <option className="text-black">
+                    <option value="Industrial Equipment">
                       Industrial Equipment
                     </option>
 
-                    <option className="text-black">
+                    <option value="Packaging Materials">
                       Packaging Materials
                     </option>
 
-                    <option className="text-black">
+                    <option value="Mobile Accessories">
                       Mobile Accessories
                     </option>
 
+                    <option value="Other">
+                      Other
+                    </option>
                   </select>
-
                 </div>
-
 
                 {/* PRODUCT NAME */}
 
@@ -464,14 +832,35 @@ YIHE International Trade Service Website
                   onChange={handleChange}
                   placeholder="Product Name"
                   required
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                  className="
+                    w-full
+
+                    rounded-xl
+
+                    bg-white/5
+                    border
+                    border-white/10
+
+                    px-4
+                    py-3
+
+                    text-sm
+                    sm:text-base
+
+                    text-white
+                    placeholder:text-gray-300
+
+                    outline-none
+
+                    focus:border-cyan-300
+
+                    transition
+                  "
                 />
 
+                {/* QUANTITY + PRICE */}
 
-                {/* QUANTITY + TARGET PRICE */}
-
-                <div className="grid md:grid-cols-2 gap-6">
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   <input
                     type="number"
                     name="quantity"
@@ -480,7 +869,31 @@ YIHE International Trade Service Website
                     placeholder="Quantity"
                     min="1"
                     required
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="
+                      w-full
+                      min-w-0
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
                   />
 
                   <input
@@ -489,105 +902,173 @@ YIHE International Trade Service Website
                     value={form.targetPrice}
                     onChange={handleChange}
                     placeholder="Target Price (Optional)"
-                    className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
-                  />
+                    className="
+                      w-full
+                      min-w-0
 
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-4
+                      py-3
+
+                      text-sm
+                      sm:text-base
+
+                      text-white
+                      placeholder:text-gray-300
+
+                      outline-none
+
+                      focus:border-cyan-300
+
+                      transition
+                    "
+                  />
                 </div>
 
-
-                {/* DELIVERY DATE */}
+                {/* DELIVERY */}
 
                 <input
                   type="date"
                   name="deliveryDate"
                   value={form.deliveryDate}
                   onChange={handleChange}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white outline-none focus:border-cyan-300"
+                  className="
+                    w-full
+
+                    rounded-xl
+
+                    bg-[#102c5c]
+                    border
+                    border-white/10
+
+                    px-4
+                    py-3
+
+                    text-sm
+                    sm:text-base
+
+                    text-white
+
+                    outline-none
+
+                    focus:border-cyan-300
+
+                    transition
+
+                    [color-scheme:dark]
+                  "
                 />
 
-
-                {/* SHIPPING METHOD */}
+                {/* SHIPPING */}
 
                 <div>
-
-                  <label className="block text-white font-semibold mb-4">
+                  <label className="block text-sm sm:text-base text-white font-semibold mb-2.5">
                     Preferred Shipping Method
                   </label>
 
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                    {["Air", "Sea", "Express"].map((method) => (
+                      <label
+                        key={method}
+                        className={`
+                          flex
+                          items-center
+                          justify-center
 
-                    <label className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-4 cursor-pointer hover:border-cyan-300 transition text-white">
+                          gap-1.5
 
-                      <input
-                        type="radio"
-                        name="shipping"
-                        value="Air"
-                        checked={form.shipping === "Air"}
-                        onChange={handleChange}
-                        className="mr-2"
-                      />
+                          rounded-xl
 
-                      Air
+                          border
 
-                    </label>
+                          py-2.5
+                          sm:py-3
 
+                          cursor-pointer
 
-                    <label className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-4 cursor-pointer hover:border-cyan-300 transition text-white">
+                          text-xs
+                          sm:text-sm
 
-                      <input
-                        type="radio"
-                        name="shipping"
-                        value="Sea"
-                        checked={form.shipping === "Sea"}
-                        onChange={handleChange}
-                        className="mr-2"
-                      />
+                          font-medium
 
-                      Sea
+                          transition
 
-                    </label>
+                          ${
+                            form.shipping === method
+                              ? "border-cyan-400 bg-cyan-400/15 text-cyan-300"
+                              : "border-white/10 bg-white/5 text-white hover:border-cyan-300/60"
+                          }
+                        `}
+                      >
+                        <input
+                          type="radio"
+                          name="shipping"
+                          value={method}
+                          checked={form.shipping === method}
+                          onChange={handleChange}
+                          className="accent-cyan-400"
+                        />
 
-
-                    <label className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-4 cursor-pointer hover:border-cyan-300 transition text-white">
-
-                      <input
-                        type="radio"
-                        name="shipping"
-                        value="Express"
-                        checked={form.shipping === "Express"}
-                        onChange={handleChange}
-                        className="mr-2"
-                      />
-
-                      Express
-
-                    </label>
-
+                        {method}
+                      </label>
+                    ))}
                   </div>
-
                 </div>
-
 
                 {/* UPLOAD */}
 
                 <div>
-
-                  <label className="block text-white font-semibold mb-3">
-                    Upload Product Image (Optional)
+                  <label className="block text-sm sm:text-base text-white font-semibold mb-2.5">
+                    Upload Product Image
+                    <span className="text-blue-200 font-normal">
+                      {" "}
+                      (Optional)
+                    </span>
                   </label>
 
                   <input
                     type="file"
                     accept="image/*"
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white file:bg-cyan-400 file:border-0 file:px-4 file:py-2 file:rounded-lg file:text-[#081F4D] file:font-semibold"
+                    className="
+                      w-full
+
+                      rounded-xl
+
+                      bg-white/5
+                      border
+                      border-white/10
+
+                      px-3
+                      py-2.5
+
+                      text-xs
+                      sm:text-sm
+
+                      text-white
+
+                      file:mr-3
+                      file:bg-cyan-400
+                      file:border-0
+                      file:px-3
+                      file:py-2
+                      file:rounded-lg
+                      file:text-[#081F4D]
+                      file:text-xs
+                      sm:file:text-sm
+                      file:font-semibold
+                    "
                   />
 
-                  <p className="mt-2 text-xs text-blue-200">
-                    Product image can be used as a reference for your quotation.
+                  <p className="mt-1.5 text-[11px] sm:text-xs text-blue-200">
+                    Reference image selection is currently UI-only and is not
+                    attached to the quotation email.
                   </p>
-
                 </div>
-
 
                 {/* MESSAGE */}
 
@@ -595,228 +1076,496 @@ YIHE International Trade Service Website
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  rows={6}
+                  rows={4}
                   required
                   placeholder="Product Specification / Additional Requirements..."
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-gray-300 resize-none outline-none focus:border-cyan-300"
-                />
+                  className="
+                    w-full
 
+                    rounded-xl
+
+                    bg-white/5
+                    border
+                    border-white/10
+
+                    px-4
+                    py-3
+
+                    text-sm
+                    sm:text-base
+
+                    text-white
+                    placeholder:text-gray-300
+
+                    resize-none
+
+                    outline-none
+
+                    focus:border-cyan-300
+
+                    transition
+                  "
+                />
 
                 {/* SUCCESS */}
 
                 {success && (
-                  <div className="rounded-xl border border-green-400/30 bg-green-400/10 px-5 py-4 text-center text-green-300 text-sm leading-6">
+                  <div
+                    className="
+                      rounded-xl
+
+                      border
+                      border-green-400/30
+
+                      bg-green-400/10
+
+                      px-4
+                      py-3
+
+                      text-center
+
+                      text-xs
+                      sm:text-sm
+
+                      text-green-300
+
+                      leading-5
+                    "
+                  >
                     {success}
                   </div>
                 )}
 
-
                 {/* ERROR */}
 
                 {error && (
-                  <div className="rounded-xl border border-red-400/30 bg-red-400/10 px-5 py-4 text-center text-red-300 text-sm leading-6">
+                  <div
+                    className="
+                      rounded-xl
+
+                      border
+                      border-red-400/30
+
+                      bg-red-400/10
+
+                      px-4
+                      py-3
+
+                      text-center
+
+                      text-xs
+                      sm:text-sm
+
+                      text-red-300
+
+                      leading-5
+                    "
+                  >
                     {error}
                   </div>
                 )}
-
 
                 {/* SUBMIT */}
 
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full rounded-xl bg-cyan-400 py-4 text-lg font-bold text-[#081F4D] hover:bg-cyan-300 transition duration-300 shadow-[0_0_30px_rgba(34,211,238,.35)] disabled:opacity-60 disabled:cursor-not-allowed"
-                >
+                  className="
+                    w-full
 
+                    rounded-xl
+
+                    bg-cyan-400
+
+                    py-3
+                    sm:py-3.5
+
+                    text-sm
+                    sm:text-base
+
+                    font-bold
+                    text-[#081F4D]
+
+                    hover:bg-cyan-300
+
+                    transition
+                    duration-300
+
+                    shadow-[0_0_25px_rgba(34,211,238,.3)]
+
+                    disabled:opacity-60
+                    disabled:cursor-not-allowed
+                  "
+                >
                   {sending
                     ? "Sending Quote Request..."
                     : "Request Free Quote"}
-
                 </button>
-
               </form>
-
             </div>
-
           </div>
-
         </div>
-
       </motion.section>
-
 
       {/* ================= WHY REQUEST QUOTE ================= */}
 
-      <section className="py-24 bg-gradient-to-b from-[#061734] to-[#081F4D]">
+      <section
+        className="
+          py-10
+          sm:py-12
+          md:py-14
 
-        <div className="max-w-7xl mx-auto px-6">
+          bg-gradient-to-b
+          from-[#061734]
+          to-[#081F4D]
+        "
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div
+            className="
+              grid
+              grid-cols-2
+              lg:grid-cols-4
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              gap-3
+              sm:gap-4
+            "
+          >
+            {[
+              {
+                value: "24H",
+                title: "Fast Response",
+              },
+              {
+                value: "500+",
+                title: "Verified Suppliers",
+              },
+              {
+                value: "OEM",
+                title: "Custom Manufacturing",
+              },
+              {
+                value: "Global",
+                title: "Shipping Support",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -4 }}
+                className="
+                  rounded-2xl
 
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
+                  bg-white/[0.08]
 
-              <h3 className="text-4xl font-bold text-cyan-300">
-                24H
-              </h3>
+                  border
+                  border-white/10
 
-              <p className="mt-4 text-blue-100">
-                Fast Response
-              </p>
+                  backdrop-blur-xl
 
-            </div>
+                  p-4
+                  sm:p-5
 
+                  text-center
+                "
+              >
+                <h3
+                  className="
+                    text-2xl
+                    sm:text-3xl
 
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
+                    font-bold
+                    text-cyan-300
+                  "
+                >
+                  {item.value}
+                </h3>
 
-              <h3 className="text-4xl font-bold text-cyan-300">
-                500+
-              </h3>
+                <p
+                  className="
+                    mt-1.5
 
-              <p className="mt-4 text-blue-100">
-                Verified Suppliers
-              </p>
+                    text-xs
+                    sm:text-sm
+                    md:text-base
 
-            </div>
-
-
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
-
-              <h3 className="text-4xl font-bold text-cyan-300">
-                OEM
-              </h3>
-
-              <p className="mt-4 text-blue-100">
-                Custom Manufacturing
-              </p>
-
-            </div>
-
-
-            <div className="rounded-3xl bg-white/10 border border-white/10 backdrop-blur-xl p-8 text-center">
-
-              <h3 className="text-4xl font-bold text-cyan-300">
-                Global
-              </h3>
-
-              <p className="mt-4 text-blue-100">
-                Shipping Support
-              </p>
-
-            </div>
-
+                    text-blue-100
+                  "
+                >
+                  {item.title}
+                </p>
+              </motion.div>
+            ))}
           </div>
-
         </div>
-
       </section>
-
 
       {/* ================= FINAL CTA ================= */}
 
-      <section className="relative py-24 bg-[#061734] overflow-hidden">
+      <section className="relative py-10 sm:py-12 md:py-14 bg-[#061734] overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-cyan-400/20 blur-[140px] rounded-full" />
 
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-400/20 blur-[150px] rounded-full" />
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-blue-500/20 blur-[140px] rounded-full" />
 
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 blur-[150px] rounded-full" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+          <div
+            className="
+              rounded-2xl
+              sm:rounded-3xl
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
+              border
+              border-white/10
 
-          <div className="rounded-[40px] border border-white/10 bg-white/10 backdrop-blur-xl p-14 text-center">
+              bg-white/[0.08]
 
-            <h2 className="text-5xl font-bold text-white">
+              backdrop-blur-xl
+
+              px-5
+              py-7
+
+              sm:px-7
+              sm:py-8
+
+              md:px-10
+              md:py-9
+
+              text-center
+            "
+          >
+            <h2
+              className="
+                text-2xl
+                sm:text-3xl
+                md:text-4xl
+
+                font-bold
+                text-white
+              "
+            >
               Need Immediate Assistance?
             </h2>
 
-            <p className="mt-6 text-blue-100 text-lg leading-8 max-w-3xl mx-auto">
-              Our sourcing specialists are available to help you
-              find the best factories, negotiate prices, arrange
-              inspections and manage global shipping.
+            <p
+              className="
+                mt-3
+                sm:mt-4
+
+                text-sm
+                sm:text-base
+
+                text-blue-100
+
+                leading-6
+
+                max-w-2xl
+                mx-auto
+              "
+            >
+              Our sourcing specialists can help with factories, pricing,
+              product requirements, inspections and international shipping.
             </p>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-6">
+            <div
+              className="
+                mt-5
+                sm:mt-6
 
+                flex
+                flex-col
+                sm:flex-row
+
+                justify-center
+
+                gap-3
+              "
+            >
               <a
                 href="https://wa.me/918789225500"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-cyan-400 px-8 py-4 text-[#081F4D] font-bold hover:bg-cyan-300 transition shadow-[0_0_35px_rgba(34,211,238,.35)]"
+                className="
+                  w-full
+                  sm:w-auto
+
+                  rounded-full
+
+                  bg-cyan-400
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  sm:text-base
+
+                  text-[#081F4D]
+
+                  font-bold
+
+                  hover:bg-cyan-300
+
+                  transition
+                "
               >
                 Chat on WhatsApp
               </a>
 
               <a
                 href="/contact"
-                className="rounded-full border border-white/20 px-8 py-4 text-white hover:bg-white/10 transition"
+                className="
+                  w-full
+                  sm:w-auto
+
+                  rounded-full
+
+                  border
+                  border-white/20
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  sm:text-base
+
+                  text-white
+
+                  hover:bg-white/10
+
+                  transition
+                "
               >
                 Contact Us
               </a>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* ================= FAQ ================= */}
 
-      <section className="py-24 bg-gradient-to-b from-[#061734] to-[#081F4D]">
+      <section
+        className="
+          py-10
+          sm:py-12
+          md:py-14
 
-        <div className="max-w-5xl mx-auto px-6">
+          bg-gradient-to-b
+          from-[#061734]
+          to-[#081F4D]
+        "
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center">
+            <span
+              className="
+                inline-block
 
-          <h2 className="text-4xl font-bold text-white text-center">
-            Frequently Asked Questions
-          </h2>
+                rounded-full
 
-          <div className="mt-14 space-y-8">
+                border
+                border-cyan-400/30
 
-            <div className="rounded-2xl bg-white/10 border border-white/10 p-8">
+                bg-cyan-400/10
 
-              <h3 className="text-cyan-300 font-semibold text-xl">
+                px-4
+                py-1.5
+
+                text-[11px]
+                sm:text-xs
+
+                uppercase
+                font-semibold
+                text-cyan-300
+              "
+            >
+              Quote FAQ
+            </span>
+
+            <h2
+              className="
+                mt-4
+
+                text-2xl
+                sm:text-3xl
+                md:text-4xl
+
+                font-bold
+                text-white
+              "
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+            <div
+              className="
+                rounded-2xl
+
+                bg-white/[0.08]
+
+                border
+                border-white/10
+
+                p-4
+                sm:p-5
+              "
+            >
+              <h3 className="text-cyan-300 font-semibold text-sm sm:text-base md:text-lg">
                 How soon will I receive my quotation?
               </h3>
 
-              <p className="mt-3 text-blue-100">
+              <p className="mt-1.5 text-sm sm:text-base text-blue-100 leading-6">
                 Usually within 24 hours after receiving your inquiry.
               </p>
-
             </div>
 
+            <div
+              className="
+                rounded-2xl
 
-            <div className="rounded-2xl bg-white/10 border border-white/10 p-8">
+                bg-white/[0.08]
 
-              <h3 className="text-cyan-300 font-semibold text-xl">
+                border
+                border-white/10
+
+                p-4
+                sm:p-5
+              "
+            >
+              <h3 className="text-cyan-300 font-semibold text-sm sm:text-base md:text-lg">
                 Can you source OEM & customized products?
               </h3>
 
-              <p className="mt-3 text-blue-100">
-                Yes. We work directly with verified manufacturers
-                for OEM and customized production.
+              <p className="mt-1.5 text-sm sm:text-base text-blue-100 leading-6">
+                Yes. We work with manufacturers that can support OEM and
+                customized production depending on product and order quantity.
               </p>
-
             </div>
 
+            <div
+              className="
+                rounded-2xl
 
-            <div className="rounded-2xl bg-white/10 border border-white/10 p-8">
+                bg-white/[0.08]
 
-              <h3 className="text-cyan-300 font-semibold text-xl">
+                border
+                border-white/10
+
+                p-4
+                sm:p-5
+              "
+            >
+              <h3 className="text-cyan-300 font-semibold text-sm sm:text-base md:text-lg">
                 Which shipping methods do you provide?
               </h3>
 
-              <p className="mt-3 text-blue-100">
-                Air Freight, Sea Freight, Railway and Express Courier.
+              <p className="mt-1.5 text-sm sm:text-base text-blue-100 leading-6">
+                Air Freight, Sea Freight and Express Courier can be arranged
+                based on your destination and requirements.
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </>
   );
 }

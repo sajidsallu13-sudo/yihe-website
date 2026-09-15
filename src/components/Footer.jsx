@@ -41,53 +41,39 @@ const products = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#071C47] via-[#081F4D] to-[#04122F] pt-12 pb-6">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#071C47] via-[#081F4D] to-[#04122F] pb-5 pt-9 sm:pt-10 lg:pt-12">
+      <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-cyan-500/10 blur-[130px]" />
+      <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-blue-600/10 blur-[130px]" />
 
-      {/* Background Glow */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-cyan-500/10 blur-[140px]" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-blue-600/10 blur-[140px]" />
-
-      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundSize: "50px 50px",
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-7">
+          <div className="col-span-2 md:col-span-4 lg:col-span-2">
+            <img src={logo} alt="YIHE" className="h-12 w-auto sm:h-14" />
 
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
-
-          {/* Company */}
-
-          <div className="lg:col-span-2">
-
-            <img
-  src={logo}
-  alt="YIHE"
-  className="h-16 w-auto"
-/>
-
-            <p className="text-cyan-300 font-medium mt-2">
+            <p className="mt-1 text-sm font-medium text-cyan-300 sm:text-base">
               YIHE International Trade Service
             </p>
 
-            <p className="mt-4 text-blue-100 leading-6">
-              We provide complete import & export solutions,
-              verified sourcing, factory inspection,
-              quality control and worldwide logistics support.
+            <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 sm:text-base">
+              We provide complete import & export solutions, verified sourcing,
+              factory inspection, quality control and worldwide logistics support.
             </p>
 
-            <div className="space-y-3 mt-5">
-
+            <div className="mt-4 grid gap-2.5 text-sm sm:grid-cols-2 sm:text-base lg:grid-cols-1">
               <a
                 href="tel:+918789225500"
-                className="flex items-center gap-3 text-blue-100 hover:text-cyan-300 transition"
+                className="flex items-center gap-2.5 text-blue-100 transition hover:text-cyan-300"
               >
-                <Phone size={18} className="text-cyan-300" />
+                <Phone size={17} className="shrink-0 text-cyan-300" />
                 +91 8789225500
               </a>
 
@@ -95,120 +81,70 @@ export default function Footer() {
                 href="https://wa.me/918789225500"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-blue-100 hover:text-cyan-300 hover:underline cursor-pointer transition"
+                className="flex items-center gap-2.5 text-blue-100 transition hover:text-cyan-300"
               >
-                <MessageCircle size={18} className="text-cyan-300" />
-                <span>Chat on WhatsApp</span>
+                <MessageCircle size={17} className="shrink-0 text-cyan-300" />
+                Chat on WhatsApp
               </a>
 
-              <div className="flex items-center gap-3 text-blue-100">
-                <Mail size={18} className="text-cyan-300" />
-                info@yiheglobe.com
-              </div>
+              <a
+                href="mailto:sales@yiheglobe.com"
+                className="flex min-w-0 items-center gap-2.5 text-blue-100 transition hover:text-cyan-300"
+              >
+                <Mail size={17} className="shrink-0 text-cyan-300" />
+                <span className="break-all">sales@yiheglobe.com</span>
+              </a>
 
-              <div className="flex items-center gap-3 text-blue-100">
-                <MapPin size={18} className="text-cyan-300" />
-                China | India | Middle East  | Africa
+              <div className="flex items-start gap-2.5 text-blue-100">
+                <MapPin size={17} className="mt-0.5 shrink-0 text-cyan-300" />
+                China | India | Middle East | Africa
               </div>
-
             </div>
-
           </div>
 
-          {/* Quick Links */}
-
           <div>
-
-            <h3 className="text-white text-xl font-semibold mb-4">
-              Quick Links
-            </h3>
-
-            <ul className="space-y-2.5">
-
+            <h3 className="mb-3 text-base font-semibold text-white sm:text-lg">Quick Links</h3>
+            <ul className="space-y-2 text-sm sm:text-base">
               {quickLinks.map((item) => (
-
                 <li key={item.name}>
-
                   <a
                     href={item.link}
-                    className="flex items-center gap-2 text-blue-100 hover:text-cyan-300 transition"
+                    className="flex items-center gap-1.5 text-blue-100 transition hover:text-cyan-300"
                   >
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={14} />
                     {item.name}
                   </a>
-
                 </li>
-
               ))}
-
             </ul>
-
           </div>
 
-          {/* Services */}
-
           <div>
-
-            <h3 className="text-white text-xl font-semibold mb-6">
-              Services
-            </h3>
-
-            <ul className="space-y-4">
-
+            <h3 className="mb-3 text-base font-semibold text-white sm:text-lg">Services</h3>
+            <ul className="space-y-2 text-sm sm:text-base">
               {services.map((item) => (
-
-                <li
-                  key={item}
-                  className="text-blue-100 hover:text-cyan-300 transition cursor-pointer"
-                >
+                <li key={item} className="cursor-pointer text-blue-100 transition hover:text-cyan-300">
                   {item}
                 </li>
-
               ))}
-
             </ul>
-
           </div>
 
-          {/* Products */}
-
-          <div>
-
-            <h3 className="text-white text-xl font-semibold mb-6">
-              Products
-            </h3>
-
-            <ul className="space-y-4">
-
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="mb-3 text-base font-semibold text-white sm:text-lg">Products</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:block sm:space-y-2 sm:text-base">
               {products.map((item) => (
-
-                <li
-                  key={item}
-                  className="text-blue-100 hover:text-cyan-300 transition cursor-pointer"
-                >
+                <li key={item} className="cursor-pointer text-blue-100 transition hover:text-cyan-300">
                   {item}
                 </li>
-
               ))}
-
             </ul>
-
           </div>
-
         </div>
 
-        {/* ⛔ Part 2 yahin se continue hoga */}
-
-                {/* Bottom Section */}
-
-        <div className="mt-10 border-t border-white/10 pt-5">
-
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-            {/* Social Icons */}
-
-            <div className="flex items-center gap-5">
-
+        <div className="mt-8 border-t border-white/10 pt-5">
+          <div className="flex flex-col items-center justify-between gap-5 lg:flex-row">
+            <div className="flex items-center gap-3">
               {[
                 { icon: Facebook, link: "#" },
                 { icon: Instagram, link: "#" },
@@ -216,76 +152,41 @@ export default function Footer() {
                 { icon: Youtube, link: "#" },
                 { icon: Globe, link: "#" },
               ].map((item, index) => {
-
                 const Icon = item.icon;
-
                 return (
-
                   <motion.a
                     key={index}
                     href={item.link}
-                    whileHover={{
-                      scale: 1.15,
-                      y: -5,
-                    }}
+                    whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center text-cyan-300 hover:bg-cyan-400 hover:text-[#081F4D] transition-all duration-300"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-cyan-300 transition hover:bg-cyan-400 hover:text-[#081F4D] sm:h-10 sm:w-10"
                   >
-                    <Icon size={20} />
+                    <Icon size={18} />
                   </motion.a>
-
                 );
-
               })}
-
             </div>
 
-            {/* Copyright */}
-
-            <div className="text-center lg:text-right">
-
+            <div className="text-center text-sm lg:text-right sm:text-base">
               <p className="text-blue-100">
-
-                © {new Date().getFullYear()}{" "}
-                <span className="font-semibold text-white">
-                  YIHE International Trade Service
-                </span>
-
+                © {new Date().getFullYear()} {" "}
+                <span className="font-semibold text-white">YIHE International Trade Service</span>
               </p>
-
-              <p className="text-sm text-blue-300 mt-2">
-
-                Designed for YIHE Global
-
-              </p>
-
+              <p className="mt-1 text-xs text-blue-300 sm:text-sm">Designed for YIHE Global</p>
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-      {/* Back To Top */}
-
       <motion.button
-        whileHover={{
-          scale: 1.1,
-          y: -4,
-        }}
+        aria-label="Back to top"
+        whileHover={{ scale: 1.08, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-        className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-cyan-400 text-[#081F4D] shadow-[0_0_30px_rgba(34,211,238,.45)] flex items-center justify-center"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-5 right-5 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-cyan-400 text-[#081F4D] shadow-[0_0_22px_rgba(34,211,238,.4)] md:bottom-6 md:right-6 md:h-12 md:w-12"
       >
-        <ArrowUpRight className="-rotate-45" size={24} />
+        <ArrowUpRight className="-rotate-45" size={21} />
       </motion.button>
-
     </footer>
   );
 }

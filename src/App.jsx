@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollProgress from "./components/ScrollProgress";
 import LoadingScreen from "./components/LoadingScreen";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <ScrollProgress />
     <Navbar />
     <EnquiryPopup />
+    <WhatsAppButton />
 
    <div className="pt-20">
     
