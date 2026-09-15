@@ -80,6 +80,8 @@ export default function About() {
           <img
             src={aboutImage}
             alt="About YIHE"
+            loading="lazy"
+            decoding="async"
             className="h-[260px] w-full rounded-2xl object-cover shadow-2xl sm:h-[330px] sm:rounded-3xl lg:h-[380px]"
           />
 

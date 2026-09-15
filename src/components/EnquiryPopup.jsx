@@ -18,15 +18,14 @@ export default function EnquiryPopup() {
   });
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
+    setForm((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setSending(true);
     setSuccess("");
     setError("");
@@ -65,10 +64,7 @@ YIHE International Trade Service Website
         "P157e_xthbgZZhYQa"
       );
 
-      setSuccess(
-        "Enquiry sent successfully! Our team will contact you soon."
-      );
-
+      setSuccess("Enquiry sent successfully! Our team will contact you soon.");
       setForm({
         name: "",
         company: "",
@@ -81,13 +77,9 @@ YIHE International Trade Service Website
         setOpen(false);
         setSuccess("");
       }, 2500);
-
     } catch (err) {
       console.error("EmailJS Error:", err);
-
-      setError(
-        "Unable to send enquiry. Please try again."
-      );
+      setError("Unable to send enquiry. Please try again.");
     } finally {
       setSending(false);
     }
@@ -95,18 +87,17 @@ YIHE International Trade Service Website
 
   return (
     <>
-      {/* ================= SIDE ENQUIRY TAB ================= */}
-
       {!open && (
         <motion.button
-          initial={{ x: 80 }}
+          type="button"
+          initial={{ x: 70 }}
           animate={{ x: 0 }}
-          whileHover={{ x: -5 }}
+          whileHover={{ x: -3 }}
           onClick={() => setOpen(true)}
-          className="fixed right-0 top-1/2 -translate-y-1/2 z-[9998] bg-cyan-400 text-[#081F4D] px-4 py-5 rounded-l-2xl shadow-2xl font-bold flex flex-col items-center gap-2"
+          aria-label="Open enquiry form"
+          className="fixed right-0 top-1/2 z-[9998] flex -translate-y-1/2 flex-col items-center gap-1.5 rounded-l-xl bg-cyan-400 px-2.5 py-3 text-xs font-bold text-[#081F4D] shadow-xl sm:rounded-l-2xl sm:px-3 sm:py-4 sm:text-sm"
         >
-          <MessageCircle size={22} />
-
+          <MessageCircle size={19} />
           <span
             style={{
               writingMode: "vertical-rl",
@@ -118,63 +109,45 @@ YIHE International Trade Service Website
         </motion.button>
       )}
 
-
-      {/* ================= POPUP ================= */}
-
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-3 py-3 backdrop-blur-sm sm:px-4 sm:py-5"
           >
-
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={{ opacity: 0, scale: 0.94, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              transition={{ duration: 0.3 }}
-              className="relative w-full max-w-md rounded-3xl border border-white/10 bg-[#081F4D] shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.94, y: 20 }}
+              transition={{ duration: 0.25 }}
+              className="relative max-h-[calc(100vh-1.5rem)] w-full max-w-sm overflow-y-auto rounded-2xl border border-white/10 bg-[#081F4D] shadow-2xl sm:max-h-[calc(100vh-2.5rem)] sm:rounded-3xl"
             >
-
-              {/* HEADER */}
-
-              <div className="bg-gradient-to-r from-[#0B2F73] to-[#114DA8] px-6 py-5">
-
+              <div className="sticky top-0 z-10 bg-gradient-to-r from-[#0B2F73] to-[#114DA8] px-5 py-4">
                 <button
+                  type="button"
                   onClick={() => setOpen(false)}
-                  className="absolute right-4 top-4 text-white/70 hover:text-white transition"
+                  aria-label="Close enquiry form"
+                  className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white/80 transition hover:bg-white/20 hover:text-white"
                 >
-                  <X size={22} />
+                  <X size={19} />
                 </button>
 
-                <div className="pr-8">
-
-                  <span className="text-cyan-300 text-xs font-semibold uppercase tracking-wider">
+                <div className="pr-9">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-cyan-300 sm:text-xs">
                     YIHE International Trade Service
                   </span>
-
-                  <h2 className="mt-2 text-2xl font-bold text-white">
+                  <h2 className="mt-1.5 text-xl font-bold text-white sm:text-2xl">
                     Send Your Enquiry
                   </h2>
-
-                  <p className="mt-1 text-sm text-blue-100">
+                  <p className="mt-1 text-xs leading-5 text-blue-100 sm:text-sm">
                     Tell us what you need and our team will contact you.
                   </p>
-
                 </div>
-
               </div>
 
-
-              {/* FORM */}
-
-              <form
-                onSubmit={handleSubmit}
-                className="p-6 space-y-4"
-              >
-
+              <form onSubmit={handleSubmit} className="space-y-3 p-4 sm:p-5">
                 <input
                   type="text"
                   name="name"
@@ -182,9 +155,8 @@ YIHE International Trade Service Website
                   onChange={handleChange}
                   placeholder="Full Name"
                   required
-                  className="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-3 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white outline-none placeholder:text-gray-300 focus:border-cyan-300 sm:text-base"
                 />
-
 
                 <input
                   type="text"
@@ -192,12 +164,10 @@ YIHE International Trade Service Website
                   value={form.company}
                   onChange={handleChange}
                   placeholder="Company Name (Optional)"
-                  className="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-3 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white outline-none placeholder:text-gray-300 focus:border-cyan-300 sm:text-base"
                 />
 
-
-                <div className="grid grid-cols-2 gap-3">
-
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <input
                     type="email"
                     name="email"
@@ -205,7 +175,7 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="Email"
                     required
-                    className="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-3 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="min-w-0 w-full rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white outline-none placeholder:text-gray-300 focus:border-cyan-300"
                   />
 
                   <input
@@ -215,68 +185,52 @@ YIHE International Trade Service Website
                     onChange={handleChange}
                     placeholder="WhatsApp / Phone"
                     required
-                    className="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-3 text-white placeholder:text-gray-300 outline-none focus:border-cyan-300"
+                    className="min-w-0 w-full rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white outline-none placeholder:text-gray-300 focus:border-cyan-300"
                   />
-
                 </div>
-
 
                 <textarea
                   name="requirement"
                   value={form.requirement}
                   onChange={handleChange}
-                  rows={4}
+                  rows={3}
                   placeholder="What product or service do you need?"
                   required
-                  className="w-full rounded-xl bg-white/10 border border-white/10 px-4 py-3 text-white placeholder:text-gray-300 outline-none resize-none focus:border-cyan-300"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white outline-none placeholder:text-gray-300 focus:border-cyan-300 sm:text-base"
                 />
 
-
-                {/* SUCCESS */}
-
                 {success && (
-                  <div className="rounded-xl bg-green-400/10 border border-green-400/30 px-4 py-3 text-sm text-green-300">
+                  <div className="rounded-xl border border-green-400/30 bg-green-400/10 px-4 py-2.5 text-xs leading-5 text-green-300 sm:text-sm">
                     {success}
                   </div>
                 )}
 
-
-                {/* ERROR */}
-
                 {error && (
-                  <div className="rounded-xl bg-red-400/10 border border-red-400/30 px-4 py-3 text-sm text-red-300">
+                  <div className="rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-2.5 text-xs leading-5 text-red-300 sm:text-sm">
                     {error}
                   </div>
                 )}
 
-
-                {/* SUBMIT */}
-
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full rounded-xl bg-cyan-400 py-3.5 font-bold text-[#081F4D] flex items-center justify-center gap-2 hover:bg-cyan-300 transition disabled:opacity-60"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 py-3 text-sm font-bold text-[#081F4D] transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60 sm:text-base"
                 >
-
                   {sending ? (
                     "Sending..."
                   ) : (
                     <>
-                      <Send size={18} />
+                      <Send size={17} />
                       Send Enquiry
                     </>
                   )}
-
                 </button>
 
-                <p className="text-center text-xs text-blue-200">
+                <p className="text-center text-[11px] text-blue-200 sm:text-xs">
                   We usually respond within 24 hours.
                 </p>
-
               </form>
-
             </motion.div>
-
           </motion.div>
         )}
       </AnimatePresence>

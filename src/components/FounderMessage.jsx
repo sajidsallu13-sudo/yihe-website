@@ -18,6 +18,8 @@ export default function FounderMessage() {
             <img
               src={founder}
               alt="Founder of YIHE"
+              loading="lazy"
+              decoding="async"
               className="relative h-[280px] w-full rounded-2xl object-contain sm:h-[340px] sm:rounded-3xl lg:h-[390px]"
             />
           </motion.div>

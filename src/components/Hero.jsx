@@ -71,6 +71,8 @@ export default function Hero() {
             <img
               src={heroImage}
               alt="Cargo"
+              fetchPriority="high"
+              decoding="async"
               className="h-[230px] w-full rounded-2xl object-cover shadow-2xl sm:h-[300px] sm:rounded-3xl lg:h-[360px]"
             />
 

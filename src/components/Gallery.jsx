@@ -71,6 +71,8 @@ export default function Gallery() {
                   <img
                     src={item}
                     alt="YIHE Global Trade"
+                    loading="lazy"
+                    decoding="async"
                     className="h-[230px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px] lg:h-[270px]"
                   />
                 </motion.div>
